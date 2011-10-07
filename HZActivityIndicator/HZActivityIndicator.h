@@ -19,13 +19,14 @@ typedef enum HZActivityIndicatorDirection
     NSUInteger      _steps;
     CGFloat         _stepDuration;
     BOOL            _isAnimating;
-
+    
     UIColor                         *_color;
     BOOL                            _hidesWhenStopped;
     UIRectCorner                    _roundedCoreners;
     CGSize                          _cornerRadii;
     CGSize                          _finSize;
     HZActivityIndicatorDirection    _direction;
+    UIActivityIndicatorViewStyle    _actualActivityIndicatorViewStyle;
 }
 
 @property (nonatomic) NSUInteger                    steps;
@@ -36,8 +37,9 @@ typedef enum HZActivityIndicatorDirection
 @property (nonatomic) UIRectCorner                  roundedCoreners;
 @property (nonatomic) CGSize                        cornerRadii;
 @property (nonatomic) HZActivityIndicatorDirection  direction;
+@property (nonatomic) UIActivityIndicatorViewStyle  activityIndicatorViewStyle;
 
-@property(nonatomic) BOOL                   hidesWhenStopped;
+@property(nonatomic) BOOL                           hidesWhenStopped;
 
 - (id)initWithActivityIndicatorStyle:(UIActivityIndicatorViewStyle)style;
 

@@ -32,6 +32,7 @@
 @synthesize roundedCoreners = _roundedCoreners;
 @synthesize cornerRadii = _cornerRadii;
 @synthesize direction = _direction;
+@synthesize activityIndicatorViewStyle = _actualActivityIndicatorViewStyle;
 
 - (void)awakeFromNib
 {
@@ -56,6 +57,11 @@
         [self _setPropertiesForStyle:style];
     }
     return self;
+}
+
+- (void)setActivityIndicatorViewStyle:(UIActivityIndicatorViewStyle)activityIndicatorViewStyle
+{
+    [self _setPropertiesForStyle:activityIndicatorViewStyle];
 }
 
 - (void)_setPropertiesForStyle:(UIActivityIndicatorViewStyle)style
