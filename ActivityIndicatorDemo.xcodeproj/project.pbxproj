@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		E71A6B7F143FA0C400675778 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E71A6B7E143FA0C400675778 /* DemoViewController.m */; };
 		E71A6B82143FA23B00675778 /* HZActivityIndicatorSubclassExample.m in Sources */ = {isa = PBXBuildFile; fileRef = E71A6B81143FA23B00675778 /* HZActivityIndicatorSubclassExample.m */; };
-		E71A6B85143FA63400675778 /* HZActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = E71A6B84143FA63400675778 /* HZActivityIndicator.m */; };
+		E71A6B85143FA63400675778 /* HZActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = E71A6B84143FA63400675778 /* HZActivityIndicatorView.m */; };
 		E75815AB143F332900EDD1B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E75815AA143F332900EDD1B7 /* UIKit.framework */; };
 		E75815AD143F332900EDD1B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E75815AC143F332900EDD1B7 /* Foundation.framework */; };
 		E75815AF143F332900EDD1B7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E75815AE143F332900EDD1B7 /* CoreGraphics.framework */; };
@@ -24,8 +24,8 @@
 		E71A6B7E143FA0C400675778 /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
 		E71A6B80143FA23B00675778 /* HZActivityIndicatorSubclassExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZActivityIndicatorSubclassExample.h; sourceTree = "<group>"; };
 		E71A6B81143FA23B00675778 /* HZActivityIndicatorSubclassExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZActivityIndicatorSubclassExample.m; sourceTree = "<group>"; };
-		E71A6B83143FA63400675778 /* HZActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HZActivityIndicator.h; path = HZActivityIndicator/HZActivityIndicator.h; sourceTree = SOURCE_ROOT; };
-		E71A6B84143FA63400675778 /* HZActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HZActivityIndicator.m; path = HZActivityIndicator/HZActivityIndicator.m; sourceTree = SOURCE_ROOT; };
+		E71A6B83143FA63400675778 /* HZActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; name = HZActivityIndicatorView.h; path = HZActivityIndicator/HZActivityIndicatorView.h; sourceTree = SOURCE_ROOT; };
+		E71A6B84143FA63400675778 /* HZActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HZActivityIndicatorView.m; path = HZActivityIndicator/HZActivityIndicatorView.m; sourceTree = SOURCE_ROOT; };
 		E75815A6143F332900EDD1B7 /* ActivityIndicatorDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActivityIndicatorDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E75815AA143F332900EDD1B7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E75815AC143F332900EDD1B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -114,8 +114,8 @@
 		E75815C7143F334700EDD1B7 /* HZActivityIndicatorView */ = {
 			isa = PBXGroup;
 			children = (
-				E71A6B83143FA63400675778 /* HZActivityIndicator.h */,
-				E71A6B84143FA63400675778 /* HZActivityIndicator.m */,
+				E71A6B83143FA63400675778 /* HZActivityIndicatorView.h */,
+				E71A6B84143FA63400675778 /* HZActivityIndicatorView.m */,
 			);
 			name = HZActivityIndicatorView;
 			sourceTree = "<group>";
@@ -186,7 +186,7 @@
 				E75815BB143F332900EDD1B7 /* DemoAppDelegate.m in Sources */,
 				E71A6B7F143FA0C400675778 /* DemoViewController.m in Sources */,
 				E71A6B82143FA23B00675778 /* HZActivityIndicatorSubclassExample.m in Sources */,
-				E71A6B85143FA63400675778 /* HZActivityIndicator.m in Sources */,
+				E71A6B85143FA63400675778 /* HZActivityIndicatorView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

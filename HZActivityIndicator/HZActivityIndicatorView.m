@@ -7,9 +7,9 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
-#import "HZActivityIndicator.h"
+#import "HZActivityIndicatorView.h"
 
-@interface HZActivityIndicator ()
+@interface HZActivityIndicatorView ()
 {
     NSTimer     *_timer;
     CGFloat     _anglePerStep;
@@ -22,7 +22,7 @@
 
 @end
 
-@implementation HZActivityIndicator
+@implementation HZActivityIndicatorView
 @synthesize steps = _steps;
 @synthesize indicatorRadius = _indicatorRadius;
 @synthesize finSize = _finSize;

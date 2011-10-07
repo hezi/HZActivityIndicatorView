@@ -6,8 +6,8 @@
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "HZActivityIndicator.h"
+#import "HZActivityIndicatorView.h"
 
-@interface HZActivityIndicatorSubclassExample : HZActivityIndicator
+@interface HZActivityIndicatorSubclassExample : HZActivityIndicatorView
 
 @end

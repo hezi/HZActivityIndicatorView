@@ -14,7 +14,7 @@ typedef enum HZActivityIndicatorDirection
     HZActivityIndicatorDirectionCounterClockwise = 1
 } HZActivityIndicatorDirection;
 
-@interface HZActivityIndicator : UIView
+@interface HZActivityIndicatorView : UIView
 {
     NSUInteger      _steps;
     CGFloat         _stepDuration;

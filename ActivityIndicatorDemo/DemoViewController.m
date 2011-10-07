@@ -8,7 +8,7 @@
 
 #import "DemoViewController.h"
 
-#import "HZActivityIndicator.h"
+#import "HZActivityIndicatorView.h"
 #import "HZActivityIndicatorSubclassExample.h"
 
 @implementation DemoViewController
@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
 
-    HZActivityIndicator *activityIndicator = [[HZActivityIndicator alloc] initWithFrame:CGRectMake(50, 50, 0, 0)];
+    HZActivityIndicatorView *activityIndicator = [[HZActivityIndicatorView alloc] initWithFrame:CGRectMake(50, 50, 0, 0)];
     activityIndicator.backgroundColor = self.view.backgroundColor;
     activityIndicator.opaque = YES;
     activityIndicator.steps = 8;
@@ -53,7 +53,7 @@
     [activityIndicator startAnimating];
     [self.view addSubview:activityIndicator];
 
-    activityIndicator = [[HZActivityIndicator alloc] initWithFrame:CGRectMake(50, 150, 0, 0)];
+    activityIndicator = [[HZActivityIndicatorView alloc] initWithFrame:CGRectMake(50, 150, 0, 0)];
     activityIndicator.backgroundColor = self.view.backgroundColor;
     activityIndicator.opaque = YES;
     activityIndicator.steps = 16;
