@@ -194,7 +194,7 @@
 
 - (UIColor*)_colorForStep:(NSUInteger)stepIndex
 {
-    CGFloat alpha = (stepIndex % _steps) * (1.0 / _steps);
+    CGFloat alpha = 1.0 - (stepIndex % _steps) * (1.0 / _steps);
             
     return [UIColor colorWithCGColor:CGColorCreateCopyWithAlpha(_color.CGColor, alpha)];
 }

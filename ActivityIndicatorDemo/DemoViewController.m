@@ -60,7 +60,7 @@
     activityIndicator.steps = 8;
     activityIndicator.finSize = CGSizeMake(17, 10);
     activityIndicator.indicatorRadius = 20;
-    activityIndicator.stepDuration = 0.1;
+    activityIndicator.stepDuration = 0.150;
     activityIndicator.color = [UIColor colorWithRed:85.0/255.0 green:0.0 blue:0.0 alpha:1.000];
     activityIndicator.cornerRadii = CGSizeMake(0, 0);
     [activityIndicator startAnimating];
