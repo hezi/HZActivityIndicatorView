@@ -33,7 +33,6 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import <QuartzCore/QuartzCore.h>
 #import "HZActivityIndicatorView.h"
 
 @interface HZActivityIndicatorView ()
