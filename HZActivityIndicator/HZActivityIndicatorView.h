@@ -74,6 +74,6 @@ typedef enum HZActivityIndicatorDirection
 - (void)stopAnimating;
 - (BOOL)isAnimating;
 
-- (CGPathRef)finPathForRect:(CGRect)rect;
+- (CGPathRef)finPathWithRect:(CGRect)rect;
 
 @end

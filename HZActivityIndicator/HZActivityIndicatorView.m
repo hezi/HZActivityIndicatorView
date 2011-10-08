@@ -206,7 +206,7 @@
     [self setNeedsDisplay];
 }
 
-- (CGPathRef)finPathForRect:(CGRect)rect
+- (CGPathRef)finPathWithRect:(CGRect)rect
 {
     CGPathRef path = [[UIBezierPath bezierPathWithRoundedRect:rect
                                             byRoundingCorners:_roundedCoreners 
@@ -219,15 +219,14 @@
 {    
     CGContextRef context = UIGraphicsGetCurrentContext();
 
+    CGRect finRect = CGRectMake(self.bounds.size.width/2 - _finSize.width/2, 0,
+                                _finSize.width, _finSize.height);
+    CGPathRef bezierPath = [self finPathWithRect:finRect];
+
     for (int i = 0; i < _steps; i++) 
     {
         [[self _colorForStep:_currStep+i*_direction] set];
-        
-        CGRect finRect = CGRectMake(self.bounds.size.width/2 - _finSize.width/2, 0,
-                                    _finSize.width, _finSize.height);
-        
-        CGPathRef bezierPath = [self finPathForRect:finRect];
-        
+                        
         CGContextBeginPath(context);
         CGContextAddPath(context, bezierPath);
         CGContextClosePath(context);

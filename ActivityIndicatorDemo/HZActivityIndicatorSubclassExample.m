@@ -37,7 +37,7 @@
 
 @implementation HZActivityIndicatorSubclassExample
 
-- (CGPathRef)finPathForRect:(CGRect)rect
+- (CGPathRef)finPathWithRect:(CGRect)rect
 {
     UIBezierPath *path = [UIBezierPath bezierPath];
     [path moveToPoint:rect.origin];
