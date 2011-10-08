@@ -207,10 +207,10 @@
 
 - (CGPathRef)finPathWithRect:(CGRect)rect
 {
-    CGPathRef path = [[UIBezierPath bezierPathWithRoundedRect:rect
-                                            byRoundingCorners:_roundedCoreners 
-                                                  cornerRadii:_cornerRadii] CGPath];
-    
+    UIBezierPath *bezierPath = [UIBezierPath bezierPathWithRoundedRect:rect
+                                                    byRoundingCorners:_roundedCoreners 
+                                                          cornerRadii:_cornerRadii];
+    CGPathRef path = CGPathCreateCopy([bezierPath CGPath]);
     return path;
 }
 

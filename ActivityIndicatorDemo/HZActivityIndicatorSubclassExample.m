@@ -39,13 +39,15 @@
 
 - (CGPathRef)finPathWithRect:(CGRect)rect
 {
-    UIBezierPath *path = [UIBezierPath bezierPath];
-    [path moveToPoint:rect.origin];
-    [path addCurveToPoint:CGPointMake(CGRectGetMaxX(rect), CGRectGetMaxY(rect))
+    UIBezierPath *bezierPath = [UIBezierPath bezierPath];
+    [bezierPath moveToPoint:rect.origin];
+    [bezierPath addCurveToPoint:CGPointMake(CGRectGetMaxX(rect), CGRectGetMaxY(rect))
             controlPoint1:CGPointMake(CGRectGetMaxX(rect), CGRectGetMinY(rect)/4)
             controlPoint2:CGPointMake(CGRectGetMinX(rect), CGRectGetMaxY(rect))];
     
-    return [path CGPath];
+    CGPathRef path = CGPathCreateCopy([bezierPath CGPath]);
+
+    return path;
     
 }
 
