@@ -114,7 +114,6 @@
             self.color = [UIColor whiteColor];
             self.finSize = CGSizeMake(2, 5);
             self.indicatorRadius = 5;
-            self.stepDuration = 0.1;
             
             break;
         }
@@ -130,6 +129,7 @@
         }
             
         default:
+            [NSException raise:NSInvalidArgumentException format:@"style invalid"];
             break;
     }
 
