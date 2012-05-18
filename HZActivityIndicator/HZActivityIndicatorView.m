@@ -142,6 +142,9 @@
 
 - (void)startAnimating
 {
+  if(self.isAnimating)
+    return;
+  
     // maa bugfix: this was 0 in the original code.  this means clockwise rotation starts more slowly than it should.
     _currStep = self.direction == HZActivityIndicatorDirectionClockwise ? self.steps - 1 : 0;
     _timer = [NSTimer scheduledTimerWithTimeInterval:_stepDuration target:self selector:@selector(_repeatAnimation:) userInfo:nil repeats:YES];
