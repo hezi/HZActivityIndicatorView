@@ -37,7 +37,7 @@
 
 @implementation HZActivityIndicatorSubclassExample
 
-- (CGPathRef)finPathWithRect:(CGRect)rect
+- (UIBezierPath *)finPathWithRect:(CGRect)rect
 {
     UIBezierPath *bezierPath = [UIBezierPath bezierPath];
     [bezierPath moveToPoint:rect.origin];
@@ -45,10 +45,7 @@
             controlPoint1:CGPointMake(CGRectGetMaxX(rect), CGRectGetMinY(rect)/4)
             controlPoint2:CGPointMake(CGRectGetMinX(rect), CGRectGetMaxY(rect))];
     
-    CGPathRef path = CGPathCreateCopy([bezierPath CGPath]);
-
-    return path;
-    
+    return bezierPath;
 }
 
 @end
