@@ -142,7 +142,11 @@
 
 - (void)startAnimating
 {
-    _currStep = 0;
+  if(self.isAnimating)
+    return;
+  
+    // maa bugfix: this was 0 in the original code.  this means clockwise rotation starts more slowly than it should.
+    _currStep = self.direction == HZActivityIndicatorDirectionClockwise ? self.steps - 1 : 0;
     _timer = [NSTimer scheduledTimerWithTimeInterval:_stepDuration target:self selector:@selector(_repeatAnimation:) userInfo:nil repeats:YES];
     _isAnimating = YES;
     
@@ -195,8 +199,10 @@
 - (UIColor*)_colorForStep:(NSUInteger)stepIndex
 {
     CGFloat alpha = 1.0 - (stepIndex % _steps) * (1.0 / _steps);
-            
-    return [UIColor colorWithCGColor:CGColorCreateCopyWithAlpha(_color.CGColor, alpha)];
+    CGColorRef copiedColor = CGColorCreateCopyWithAlpha(_color.CGColor, alpha);
+    UIColor *color = [UIColor colorWithCGColor:copiedColor];
+    CGColorRelease(copiedColor);
+    return color;
 }
 
 - (void)_repeatAnimation:(NSTimer*)timer
@@ -205,13 +211,11 @@
     [self setNeedsDisplay];
 }
 
-- (CGPathRef)finPathWithRect:(CGRect)rect
+- (UIBezierPath *)finPathWithRect:(CGRect)rect
 {
-    UIBezierPath *bezierPath = [UIBezierPath bezierPathWithRoundedRect:rect
-                                                    byRoundingCorners:_roundedCoreners 
-                                                          cornerRadii:_cornerRadii];
-    CGPathRef path = CGPathCreateCopy([bezierPath CGPath]);
-    return path;
+  return [UIBezierPath bezierPathWithRoundedRect:rect
+                               byRoundingCorners:_roundedCoreners
+                                     cornerRadii:_cornerRadii];
 }
 
 - (void)drawRect:(CGRect)rect
@@ -220,14 +224,16 @@
 
     CGRect finRect = CGRectMake(self.bounds.size.width/2 - _finSize.width/2, 0,
                                 _finSize.width, _finSize.height);
-    CGPathRef bezierPath = [self finPathWithRect:finRect];
+    UIBezierPath *bezierPath = [self finPathWithRect:finRect];
 
+    CGPathRef bezierPathRef = CGPathCreateCopy([bezierPath CGPath]);    
+  
     for (int i = 0; i < _steps; i++) 
     {
         [[self _colorForStep:_currStep+i*_direction] set];
                         
         CGContextBeginPath(context);
-        CGContextAddPath(context, bezierPath);
+        CGContextAddPath(context, bezierPathRef);
         CGContextClosePath(context);
         CGContextFillPath(context);
 
@@ -235,6 +241,8 @@
         CGContextRotateCTM(context, _anglePerStep);
         CGContextTranslateCTM(context, -(self.bounds.size.width / 2), -(self.bounds.size.height / 2));
     }
+  
+    CGPathRelease(bezierPathRef);
 }
 
 
