@@ -185,7 +185,7 @@
 
 - (void)setSteps:(NSUInteger)steps
 {
-    _anglePerStep = (360/steps) * M_PI / 180;
+    _anglePerStep = (360.0 / (CGFloat)steps) * M_PI / 180.0;
     _steps = steps;
     [self setNeedsDisplay];
 }
@@ -196,6 +196,11 @@
     [self setNeedsDisplay];
 }
 
+- (void)setProgress:(CGFloat)progress
+{
+    _progress = progress;
+    [self setNeedsDisplay];
+}
 - (UIColor*)_colorForStep:(NSUInteger)stepIndex
 {
     CGFloat alpha = 1.0 - (stepIndex % _steps) * (1.0 / _steps);
@@ -230,6 +235,7 @@
   
     for (int i = 0; i < _steps; i++) 
     {
+        if (!_isAnimating && _progress < ((CGFloat)(i + 1) / (CGFloat)(_steps))) break;
         [[self _colorForStep:_currStep+i*_direction] set];
                         
         CGContextBeginPath(context);

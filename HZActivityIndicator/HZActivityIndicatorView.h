@@ -65,6 +65,7 @@ typedef enum HZActivityIndicatorDirection
 @property (nonatomic) CGSize                        cornerRadii;
 @property (nonatomic) HZActivityIndicatorDirection  direction;
 @property (nonatomic) UIActivityIndicatorViewStyle  activityIndicatorViewStyle;
+@property (nonatomic) CGFloat                       progress;
 
 @property(nonatomic) BOOL                           hidesWhenStopped;
 
