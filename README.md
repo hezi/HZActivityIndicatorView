@@ -1,18 +1,18 @@
-#HZActivityIndicatorView
+# HZActivityIndicatorView
 A highly customizable drop-in replacement for UIActivityIndicatorView
 
 ![HZActivityIndicatorView Screenshot](https://github.com/hezi/HZActivityIndicatorView/raw/master/screenshot.png)
 
 HZActivityIndicatorView has to be compiled with ARC, a branch with classic memory managment might be added soon.
 
-##Usage
+## Usage
 
 HZActivityIndicatorView can be used just like UIActivityIndicatorView and supports the default UIKit styles for activity indicators.
 
     HZActivityIndicatorView *activityIndicator = [[HZActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
 	[activityIndicator startAnimating];
 
-##Customization
+## Customization
 
 A few extra properties allow you to further customize the activity indicator
 
@@ -47,10 +47,10 @@ A few extra properties allow you to further customize the activity indicator
 
     [activityIndicator startAnimating];
 
-##Known Issues
+## Known Issues
 
 * default styles are still a bit off.
 
 
-###Copyright
+### Copyright
 Copyright 2011 Hezi Cohen. All rights reserved. See LICENSE for more details.
